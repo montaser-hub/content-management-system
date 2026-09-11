@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment secrets — never commit real values.
+# .env.test is the one exception: it holds no real secrets (dummy,
+# clearly-labeled test-only values), and committing it lets CI run the e2e
+# suite without any secret-injection setup.
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.test
+
+# Logs
+*.log
+logs/
+
+# Coverage / test artifacts
+coverage/
+.nyc_output/
+
+# Prisma — generated client is rebuilt by `npm run db:generate` / postinstall,
+# never hand-edited, and is large — not worth tracking.
+server/src/generated/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
